@@ -24,13 +24,13 @@ A través de esta configuración profunda, el IDE y el Gestor de Agentes se conv
 
 ## 🏗️ 2. Arquitectura del Ecosistema
 
-El sistema se estructura en tres pilares fundamentales: **Gobierno por Reglas Contextuales**, **Orquestación Multi-Agente** y **Puente de Integración MCP**.
+El sistema se estructura en cuatro pilares fundamentales: **Gobierno por Reglas Contextuales**, **Orquestación Multi-Agente**, **Ecosistema de Habilidades Autónomas (Skills)** y **Puente de Integración MCP**.
 
 ```mermaid
 graph TD
     subgraph 1. Jerarquía de Reglas Contextuales
-        A[Google Antigravity IDE] --> B[Nivel Global: ~/.gemini/antigravity]
-        B --> C[Nivel Workspace: .gemini/rules]
+        A[Google Antigravity IDE] --> B[Nivel Global: ~/.gemini/config]
+        B --> C[Nivel Workspace: .agents/rules]
         C --> D1[Módulo Python & IA: 20-python-ai-services.md]
         C --> D2[Módulo Backend Core: 30-backend-services.md]
         C --> D3[Módulo Frontend UI/UX: 40-frontend-uiux.md]
@@ -45,10 +45,23 @@ graph TD
         E --> F5["🛡️ qa-security-auditor<br/>(OWASP Top 10, TDD)"]
     end
 
-    subgraph 3. Conexión Externa via Model Context Protocol
+    subgraph 3. Habilidades Autónomas (Skills)
+        S1["🎨 brand-identity<br/>(Tokens, Design System, Adaptive)"]
+        S2["📝 changelog-generator<br/>(Git Commits -> User Changelog)"]
+        S3["⚡ skill-creator<br/>(Evals, Benchmarks, Templates)"]
+        S4["🔄 sprint-issue-developer<br/>(Looping, Trazabilidad, PRs)"]
+    end
+
+    subgraph 4. Conexión Externa via Model Context Protocol
         F5 --> G[GitHub MCP Server]
         G --> H["📦 Repositorio GitHub<br/>(Ramas, Commits, PRs, Issues)"]
     end
+
+    F1 -.-> S1 & S3
+    F2 -.-> S3 & S4
+    F3 -.-> S1 & S4
+    F4 -.-> S1
+    F5 -.-> S2 & S4
 ```
 
 ---
@@ -124,11 +137,24 @@ Gracias a **Model Context Protocol (MCP)**, los agentes tienen acceso directo y 
 
 ---
 
-## 📁 6. Estructura del Repositorio
+## ⚡ 6. Ecosistema de Habilidades Autónomas (Agent Skills)
+
+Además de reglas y agentes, el framework incorpora **habilidades autónomas** cargadas bajo demanda (*on-demand progressive disclosure*), disponibles tanto a nivel local (`.agents/skills/`) como a nivel global del sistema (`~/.gemini/config/skills/`):
+
+| Habilidad (Skill) | Ámbito y Propósito | Archivos Clave |
+| :--- | :--- | :--- |
+| **`brand-identity`** | **Tri-Adaptativo**: Marca personal de **Rogerr Carvajal** (especialista en Modelos de IA & Agentes Autónomos), línea base CEIA/SWGA (dark mode + glassmorphism), estándares de stack (PHP 8+, PostgreSQL 14+, Python 3.11+) y adaptación a cualquier proyecto. | `SKILL.md`, `resources/developer-personal-brand.md`, `resources/brand-analyzer.md`, `resources/design.md`, `resources/tech-stack.md`, `resources/voice-tone.md` |
+| **`changelog-generator`** | Transforma historiales de commits técnicos de Git en notas de versión profesionales categorizadas (features, mejoras, correcciones) para usuarios finales y releases de GitHub. | `SKILL.md` |
+| **`skill-creator`** | Suite integral basada en la guía oficial `creador-de-skills-antigravity.md` para crear, optimizar, evaluar y ejecutar benchmarks de nuevas habilidades con validación sintáctica y visualizador web. | `SKILL.md`, `references/creador-de-skills-antigravity.md`, `scripts/`, `eval-viewer/`, `agents/` |
+| **`sprint-issue-developer`** | Metodología estructurada en 4 fases para resolver Issues de Sprints técnicos con bucle de autocorrección (looping) guiado por logs hasta 0 fallos, trazabilidad `Ref #X` y PRs limpios. | `SKILL.md`, `prompts/sprint_issue_development_guide.md` |
+
+---
+
+## 📁 7. Estructura del Repositorio
 
 ```text
-antigravity-rules/
-├── .gemini/
+antigravity-deep-configuration/
+├── .agents/                              # Raíz Oficial de Personalización Antigravity
 │   ├── rules/
 │   │   ├── 00-global-principles.md       # Reglas Globales (Nivel 1)
 │   │   ├── 10-workspace-architecture.md  # Arquitectura Políglota y DDD (Nivel 2)
@@ -137,23 +163,35 @@ antigravity-rules/
 │   │   ├── 40-frontend-uiux.md           # Diseño UI/UX y Tailwind (Nivel 3)
 │   │   └── 50-security-and-devops.md     # Seguridad OWASP y DevOps (Nivel 3)
 │   ├── agents/
-│   │   └── agents_registry.json          # Registro de Roles Multi-Agente
+│   │   └── agents_registry.json          # Registro de Roles Multi-Agente con Skills asociadas
+│   ├── skills/                           # Habilidades Autónomas del Workspace
+│   │   ├── brand-identity/               # Marca Personal Rogerr Carvajal & Diseño Tri-Adaptativo
+│   │   ├── changelog-generator/          # Generador de Notas de Lanzamiento desde Git
+│   │   ├── skill-creator/                # Suite Oficial de Creación y Evaluación de Habilidades
+│   │   └── sprint-issue-developer/       # Metodología de Desarrollo de Sprints en Bucle
 │   └── mcp_config.json                   # Plantilla de Configuración MCP
+├── .gemini/                              # Compatibilidad y Espejo Dual
+│   ├── rules/                            # Espejo de reglas
+│   ├── agents/                           # Espejo de agentes
+│   ├── skills/                           # Espejo de habilidades
+│   └── mcp_config.json                   # Espejo de MCP
 ├── Docs/
 │   ├── PLAN_IMPLEMENTACION_ANTIGRAVITY.md# Plan maestro y alcance técnico
 │   ├── WALKTHROUGH_EJECUCION.md         # Guía práctica paso a paso
+│   ├── GUIA_HABILIDADES_AGENTICAS.md    # Guía detallada del ecosistema de habilidades
+│   ├── creador-de-skills-antigravity.md # Manual Oficial de Creación de Skills para Antigravity
 │   └── [respaldos de todas las reglas]  # Copia de seguridad local
 └── README.md                             # Documentación principal de la comunidad
 ```
 
 ---
 
-## 🚀 7. Guía de Inicio Rápido
+## 🚀 8. Guía de Inicio Rápido
 
 1. **Clonar el proyecto:**
    ```bash
-   git clone https://github.com/TU_USUARIO/antigravity-rules.git
-   cd antigravity-rules
+   git clone https://github.com/rogerrcarvajal/antigravity-deep-configuration.git
+   cd antigravity-deep-configuration
    ```
 2. **Configurar GitHub MCP:**
    - Define tu Personal Access Token (PAT) en la configuración de Antigravity MCP o en tu archivo `.env`.

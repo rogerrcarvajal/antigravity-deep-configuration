@@ -81,9 +81,19 @@ Antigravity integra el servidor MCP oficial de GitHub (`@modelcontextprotocol/se
 ---
 
 ## 4. Ecosistema Multi-Agente
-Se registraron 5 roles en `.gemini/agents/agents_registry.json`:
+Se registraron 5 roles en `.agents/agents/agents_registry.json` (y `.gemini/agents/agents_registry.json`):
 1. **`solution-architect`**: Diseña diagramas C4/Mermaid, contratos OpenAPI y modelos DDD.
 2. **`python-ai-engineer`**: Desarrolla microservicios con FastAPI, pipelines de IA y validación Pydantic.
 3. **`backend-core-dev`**: Implementa lógica transaccional PHP bajo XAMPP con PDO y PSR-12.
 4. **`ui-ux-designer`**: Construye componentes frontend accesibles, responsivos y con design tokens de Tailwind.
 5. **`qa-security-auditor`**: Audita código contra OWASP Top 10, ejecuta tests y abre Pull Requests vía GitHub MCP.
+
+---
+
+## 5. Ecosistema de Habilidades Autónomas (Agent Skills)
+Se integraron 4 habilidades autónomas de alto rendimiento tanto a nivel local (`.agents/skills/`) como a nivel global (`~/.gemini/config/skills/`):
+1. **`brand-identity`**: Estándar adaptativo de identidad de marca, modo oscuro glassmorphism y stack técnico (PHP 8+, PostgreSQL 14+, Vanilla JS).
+2. **`changelog-generator`**: Generador automatizado de notas de release profesionales a partir del historial de commits de Git.
+3. **`skill-creator`**: Framework integral con scripts de evaluación, validación y banco de pruebas para crear y refinar nuevas habilidades.
+4. **`sprint-issue-developer`**: Flujo metódico en 6 etapas para resolver Issues técnicos en bucle guiado por logs hasta 0 fallos.
+

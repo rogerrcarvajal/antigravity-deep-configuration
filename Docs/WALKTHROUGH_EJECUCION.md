@@ -41,7 +41,22 @@ El archivo `.gemini/agents/agents_registry.json` contiene la configuración de a
 
 ---
 
-## 4. Gestión de la Documentación Viva
+## 4. Cómo Operar con Habilidades Autónomas (Agent Skills)
+
+Las habilidades se activan automáticamente bajo demanda según la tarea requerida:
+
+| Flujo de Trabajo | Habilidad Activada | Ejemplo de Disparador en Chat |
+| :--- | :--- | :--- |
+| **Onboarding / UI / Estándar de Stack** | `brand-identity` | *"Aplica la identidad de marca CEIA y diseña la vista de login con glassmorphism."* / *"Extrae el manual de identidad del proyecto X y genera tokens."* |
+| **Generación de Changelog y Releases** | `changelog-generator` | *"Genera el changelog de los commits de los últimos 7 días categorizado para usuarios."* |
+| **Creación y Benchmark de Nuevas Habilidades** | `skill-creator` | *"Crea una nueva habilidad para validar esquemas JSON y corre un benchmark con quick_validate.py."* |
+| **Desarrollo Metódico de Sprints** | `sprint-issue-developer` | *"Desarrolla el Issue S1-02 siguiendo el bucle de desarrollo sin errores y abre un PR con Ref #12."* |
+
+---
+
+## 5. Gestión de la Documentación Viva
 Para mantener viva la documentación:
-- Cualquier nueva regla agregada en `.gemini/rules/` debe ser respaldada en `Docs/`.
-- Cualquier nuevo rol de agente debe añadirse a `.gemini/agents/agents_registry.json` y reflejarse en este Walkthrough.
+- Cualquier nueva regla agregada en `.agents/rules/` debe ser respaldada en `Docs/`.
+- Cualquier nuevo rol de agente debe añadirse a `.agents/agents/agents_registry.json` y reflejarse en este Walkthrough.
+- Cualquier nueva habilidad incorporada debe ser documentada en `Docs/GUIA_HABILIDADES_AGENTICAS.md` e instalada tanto en `.agents/skills/` como en `~/.gemini/config/skills/`.
+
