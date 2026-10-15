@@ -6,6 +6,7 @@
 [![Model Context Protocol](https://img.shields.io/badge/MCP-GitHub%20Server-24292e?style=for-the-badge&logo=github&logoColor=white)](https://modelcontextprotocol.io)
 [![Stack](https://img.shields.io/badge/Stack-Python%20%7C%20PHP%20%7C%20TypeScript%20%7C%20Go-00599C?style=for-the-badge)](https://github.com)
 [![Architecture](https://img.shields.io/badge/Architecture-Hexagonal%20%7C%20DDD-green?style=for-the-badge)](https://github.com)
+[![CI/CD Pipeline](https://img.shields.io/badge/CI%2FCD-Passing-brightgreen?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/rogerrcarvajal/antigravity-deep-configuration/actions)
 
 ---
 
@@ -175,12 +176,22 @@ antigravity-deep-configuration/
 │   ├── agents/                           # Espejo de agentes
 │   ├── skills/                           # Espejo de habilidades
 │   └── mcp_config.json                   # Espejo de MCP
+├── .github/                              # Plantillas y Automatización GitHub Actions
+│   ├── ISSUE_TEMPLATE/                   # Plantillas para Bugs, Features y Docs
+│   ├── workflows/
+│   │   └── ci.yml                        # Pipeline de Calidad, Pytest y Validación Sintáctica
+│   └── PULL_REQUEST_TEMPLATE.md          # Estándar de PRs con Trazabilidad y Checklist
 ├── Docs/
 │   ├── PLAN_IMPLEMENTACION_ANTIGRAVITY.md# Plan maestro y alcance técnico
 │   ├── WALKTHROUGH_EJECUCION.md         # Guía práctica paso a paso
 │   ├── GUIA_HABILIDADES_AGENTICAS.md    # Guía detallada del ecosistema de habilidades
 │   ├── creador-de-skills-antigravity.md # Manual Oficial de Creación de Skills para Antigravity
 │   └── [respaldos de todas las reglas]  # Copia de seguridad local
+├── tests/                                # Suite Automatizada de Pruebas Unitarias e Integración
+│   ├── test_skills.py                    # Validación de formato y sintaxis de Skills
+│   ├── test_json_configs.py              # Validación de integridad de registros y MCP
+│   ├── test_rules_structure.py          # Verificación de presencia y contenido de reglas
+│   └── test_utils.py                     # Pruebas de utilitarios de análisis
 └── README.md                             # Documentación principal de la comunidad
 ```
 

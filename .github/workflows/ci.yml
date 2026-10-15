@@ -1,0 +1,53 @@
+name: CI/CD Antigravity Quality Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Run Automated Tests & Validations
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest pyyaml
+
+      - name: Run Test Suite
+        run: |
+          pytest tests/ -v
+
+      - name: Run Direct Skills Validation
+        run: |
+          python -c "
+          import os, subprocess, sys
+          failed = False
+          for root in ['.agents/skills', '.gemini/skills']:
+              if not os.path.exists(root):
+                  continue
+              for s in sorted(os.listdir(root)):
+                  p = os.path.join(root, s)
+                  if os.path.isdir(p) and os.path.exists(os.path.join(p, 'SKILL.md')):
+                      cmd = [sys.executable, '.agents/skills/skill-creator/scripts/quick_validate.py', p]
+                      res = subprocess.run(cmd, capture_output=True, text=True)
+                      if res.returncode != 0:
+                          print(f'❌ Validation failed for {p}: {res.stderr or res.stdout}')
+                          failed = True
+                      else:
+                          print(f'✅ Validated {p}: {res.stdout.strip()}')
+          if failed:
+              sys.exit(1)
+          "

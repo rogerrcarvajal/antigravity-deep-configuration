@@ -60,3 +60,16 @@ Para mantener viva la documentación:
 - Cualquier nuevo rol de agente debe añadirse a `.agents/agents/agents_registry.json` y reflejarse en este Walkthrough.
 - Cualquier nueva habilidad incorporada debe ser documentada en `Docs/GUIA_HABILIDADES_AGENTICAS.md` e instalada tanto en `.agents/skills/` como en `~/.gemini/config/skills/`.
 
+---
+
+## 6. Pipeline de Integración Continua (CI/CD) y Validación Automatizada
+
+El repositorio cuenta con una suite completa de pruebas e integración en GitHub Actions (`.github/workflows/ci.yml`):
+- **Pruebas de Skills:** Verifica que todo `SKILL.md` cumpla con el estándar YAML frontmatter, longitud de descripción, formato kebab-case y estructura interna (`tests/test_skills.py`).
+- **Pruebas de Configuración JSON:** Garantiza que los registros de agentes (`agents_registry.json`) y configuraciones MCP (`mcp_config.json`) sean JSON válidos y contengan los 5 roles canónicos (`tests/test_json_configs.py`).
+- **Pruebas de Reglas y Documentación:** Verifica la integridad y contenido de las 6 reglas jerárquicas y documentación técnica (`tests/test_rules_structure.py`).
+- **Comando de Ejecución Local:**
+  ```bash
+  pytest tests/ -v
+  ```
+
