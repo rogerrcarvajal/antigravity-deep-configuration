@@ -1,11 +1,13 @@
 # 🚀 Antigravity Deep Configuration: Ecosistema de Desarrollo Autónomo de Alto Rendimiento
 
-> **Transformando Google Antigravity en una Suite de Ingeniería de Software Inteligente, Políglota y Multi-Agente.**
+> **Transformando Google Antigravity en una Suite de Ingeniería de Software Inteligente, Multi-Arquetipo, Políglota y Cloud-Native.**
 
 [![Antigravity](https://img.shields.io/badge/Google-Antigravity-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://antigravity.google)
 [![Model Context Protocol](https://img.shields.io/badge/MCP-GitHub%20Server-24292e?style=for-the-badge&logo=github&logoColor=white)](https://modelcontextprotocol.io)
-[![Stack](https://img.shields.io/badge/Stack-Python%20%7C%20PHP%20%7C%20TypeScript%20%7C%20Go-00599C?style=for-the-badge)](https://github.com)
-[![Architecture](https://img.shields.io/badge/Architecture-Hexagonal%20%7C%20DDD-green?style=for-the-badge)](https://github.com)
+[![Stack](https://img.shields.io/badge/Stack-Python%20%7C%20PHP%20%7C%20TypeScript%20%7C%20Docker-00599C?style=for-the-badge)](https://github.com)
+[![Cloud Native](https://img.shields.io/badge/Cloud%20Native-GCP%20Cloud%20Run%20%7C%20AWS%20ECS-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://github.com)
+[![Architecture](https://img.shields.io/badge/Architecture-Hexagonal%20%7C%20DDD%20%7C%20Multi--Archetype-green?style=for-the-badge)](https://github.com)
+[![CI/CD Pipeline](https://img.shields.io/badge/CI%2FCD-Passing-brightgreen?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/rogerrcarvajal/antigravity-deep-configuration/actions)
 
 ---
 
@@ -16,7 +18,9 @@ El objetivo primordial de este proyecto es llevar la configuración de **Google 
 A través de esta configuración profunda, el IDE y el Gestor de Agentes se convierten en un equipo de ingeniería completo capaz de:
 1. **Planificar y Diseñar** arquitecturas complejas antes de codificar (`/plan` y diagramas Mermaid).
 2. **Operar bajo Reglas Jerárquicas en 3 Niveles** (Global, Workspace y Carpeta) garantizando código limpio, seguro y tipado.
-3. **Desarrollar en un Stack Políglota de Alto Impacto** (Python para IA/Data, PHP 8.2+ para APIs transaccionales bajo XAMPP, TypeScript para Frontend reactivo).
+3. **Gobernar una Arquitectura Multi-Arquetipo Adaptativa**:
+   - **Arquetipo A (Core Web & Transaccional - CEIA / SWGA):** PHP 8.2+ POO/MVC, PostgreSQL 14+, PDO seguro y HTML5/CSS3. Totalmente protegido y preservado sin afectación a sistemas existentes.
+   - **Arquetipo B (Cloud-Native & Intelligent Agent Ecosystem - Wellness Platform 2.0 / Vanguardia):** Python 3.11+, FastAPI asíncrono, Pydantic v2, PostgreSQL + pgvector (RAG Híbrido), orquestación de agentes inteligentes, UI Glassmorphic/Tailwind y despliegue a la nube (**GCP Cloud Run, AWS App Runner / ECS**) desde GitHub.
 4. **Interactuar directamente con GitHub vía MCP (Model Context Protocol)** para automatizar ramas, commits, issues y Pull Requests sin salir del flujo de trabajo.
 5. **Orquestar Multi-Agentes Especializados** con roles, responsabilidades y herramientas bien acotadas.
 
@@ -24,37 +28,38 @@ A través de esta configuración profunda, el IDE y el Gestor de Agentes se conv
 
 ## 🏗️ 2. Arquitectura del Ecosistema
 
-El sistema se estructura en cuatro pilares fundamentales: **Gobierno por Reglas Contextuales**, **Orquestación Multi-Agente**, **Ecosistema de Habilidades Autónomas (Skills)** y **Puente de Integración MCP**.
+El sistema se estructura en cuatro pilares fundamentales: **Gobierno por Reglas Contextuales**, **Orquestación Multi-Agente**, **Ecosistema de Habilidades Autónomas (Skills)** y **Puente de Integración MCP & Cloud Deployment**.
 
 ```mermaid
 graph TD
     subgraph 1. Jerarquía de Reglas Contextuales
         A[Google Antigravity IDE] --> B[Nivel Global: ~/.gemini/config]
         B --> C[Nivel Workspace: .agents/rules]
-        C --> D1[Módulo Python & IA: 20-python-ai-services.md]
-        C --> D2[Módulo Backend Core: 30-backend-services.md]
-        C --> D3[Módulo Frontend UI/UX: 40-frontend-uiux.md]
-        C --> D4[Módulo QA & DevOps: 50-security-and-devops.md]
+        C --> D1["⚡ Arquetipo B: Python Cloud-Native & IA<br/>(20-python-ai-services.md)"]
+        C --> D2["🏛️ Arquetipo A: Core Web PHP & SWGA<br/>(30-backend-services.md)"]
+        C --> D3["🎨 Módulo Frontend UI/UX Glassmorphic<br/>(40-frontend-uiux.md)"]
+        C --> D4["🛡️ Módulo QA, DevOps & Multi-Cloud<br/>(50-security-and-devops.md)"]
     end
 
     subgraph 2. Orquestación Multi-Agente
         E[Agent Manager Orchestrator] --> F1["🎯 solution-architect<br/>(DDD, C4, Contratos OpenAPI)"]
-        E --> F2["🐍 python-ai-engineer<br/>(FastAPI, Pydantic, Embeddings)"]
+        E --> F2["🐍 python-ai-engineer<br/>(FastAPI, Pydantic, Agents, pgvector)"]
         E --> F3["🐘 backend-core-dev<br/>(PHP 8.2, XAMPP, PDO, PSR-12)"]
-        E --> F4["🎨 ui-ux-designer<br/>(Tailwind, WCAG 2.1 AA)"]
-        E --> F5["🛡️ qa-security-auditor<br/>(OWASP Top 10, TDD)"]
+        E --> F4["🎨 ui-ux-designer<br/>(Tailwind, Glassmorphism, WCAG 2.1 AA)"]
+        E --> F5["🛡️ qa-security-auditor<br/>(OWASP Top 10, TDD, Looping)"]
     end
 
     subgraph 3. Habilidades Autónomas (Skills)
-        S1["🎨 brand-identity<br/>(Tokens, Design System, Adaptive)"]
+        S1["🎨 brand-identity<br/>(Multi-Arquetipo, Glassmorphic, Brand)"]
         S2["📝 changelog-generator<br/>(Git Commits -> User Changelog)"]
         S3["⚡ skill-creator<br/>(Evals, Benchmarks, Templates)"]
-        S4["🔄 sprint-issue-developer<br/>(Looping, Trazabilidad, PRs)"]
+        S4["🔄 sprint-issue-developer<br/>(Looping, Trazabilidad, Ref #X)"]
     end
 
-    subgraph 4. Conexión Externa via Model Context Protocol
+    subgraph 4. Conexión MCP & Despliegue Multi-Cloud
         F5 --> G[GitHub MCP Server]
         G --> H["📦 Repositorio GitHub<br/>(Ramas, Commits, PRs, Issues)"]
+        H --> I["☁️ Despliegue Multi-Cloud CI/CD<br/>(GCP Cloud Run / AWS ECS / PaaS)"]
     end
 
     F1 -.-> S1 & S3
@@ -66,19 +71,34 @@ graph TD
 
 ---
 
-## 🎯 3. Sistema de Reglas en 3 Niveles
+## 🧭 3. Matriz de Arquetipos de Desarrollo
+
+Antigravity detecta dinámicamente el perfil del proyecto sin acoplamiento forzado:
+
+| Dimensión | Arquetipo A: Core Web Transaccional (CEIA / SWGA) | Arquetipo B: Cloud-Native & AI-First (Wellness 2.0) |
+|---|---|---|
+| **Caso de Uso** | Sistemas de gestión académica, ERPs, APIs transaccionales. | Asistentes inteligentes, sistemas RAG, agentes autónomos, analítica de IA. |
+| **Backend & Core** | PHP 8.2+ POO / MVC / PSR-4, 7, 12, 15. | Python 3.11+ / 3.12+, FastAPI asíncrono (`async def`), Pydantic v2. |
+| **Enfoque de IA** | Integración externa vía APIs REST / MCP. | Agentes autónomos nativos, StateGraphs, Tool Use tipado, RAG Híbrido. |
+| **Base de Datos** | PostgreSQL 14+ / MariaDB con PDO Prepared Statements. | PostgreSQL + `pgvector` (búsqueda densa) + BM25 (léxica) + Redis (estados). |
+| **Frontend & UI** | HTML5 semántico, CSS3 Vanilla, JavaScript nativo. | HTML5 semántico, CSS3 Glassmorphic / Tailwind tokens, JavaScript reactivo. |
+| **Despliegue** | Apache / Nginx (XAMPP local), VPS, Servidor Dedicado. | **Docker multi-stage**, serverless container desplegable desde GitHub a **GCP Cloud Run**, **AWS ECS / App Runner** o PaaS. |
+
+---
+
+## 🎯 4. Sistema de Reglas en 3 Niveles
 
 Antigravity evalúa el contexto en cascada para aplicar las restricciones exactas según el archivo editado:
 
 | Nivel | Ubicación | Responsabilidad y Alcance |
 | :--- | :--- | :--- |
 | **Nivel 1: Global** | `.gemini/rules/00-global-principles.md` | Estándares transversales: Español técnico, SOLID, Clean Architecture, seguridad **Zero-Trust** (cero secretos en código) y Conventional Commits. |
-| **Nivel 2: Workspace** | `.gemini/rules/10-workspace-architecture.md` | Arquitectura Hexagonal (Ports & Adapters), Domain-Driven Design (DDD), stack políglota y flujo obligatorio guiado por `/plan`. |
+| **Nivel 2: Workspace** | `.gemini/rules/10-workspace-architecture.md` | Arquitectura Hexagonal (Ports & Adapters), Domain-Driven Design (DDD), gobernanza multi-arquetipo y flujo obligatorio `/plan`. |
 | **Nivel 3: Carpeta / Módulo** | `.gemini/rules/20-*.md` a `50-*.md` | Reglas hiper-especializadas: tipado asíncrono con Pydantic v2 en Python, Prepared Statements en PHP, tokens de Tailwind en UI y auditorías OWASP en QA. |
 
 ---
 
-## 🤖 4. Ecosistema Multi-Agente (Agent Management)
+## 🤖 5. Ecosistema Multi-Agente (Agent Management)
 
 En el modo de Administración de Agentes, las responsabilidades se distribuyen entre especialistas:
 
@@ -91,27 +111,29 @@ sequenceDiagram
     participant Coders as Python / Backend / UI
     participant QA as QA & Security Auditor
     participant GH as GitHub MCP
+    participant Cloud as GCP / AWS Cloud
 
     Dev->>AG: Solicita nuevo requerimiento / feature
-    AG->>Arc: Invoca análisis de arquitectura
+    AG->>Arc: Invoca análisis de arquitectura & selección de arquetipo
     Arc-->>AG: Genera diagramas y contratos OpenAPI
-    AG->>Coders: Delega implementación según tecnología
+    AG->>Coders: Delega implementación según tecnología (A o B)
     Coders-->>AG: Código producido con tipado estricto y tests
-    AG->>QA: Ejecuta auditoría OWASP y suite de pruebas
-    QA->>GH: Publica rama y abre Pull Request detallado
-    GH-->>Dev: Notificación de PR listo para revisión
+    AG->>QA: Ejecuta auditoría OWASP, looping y suite de pruebas
+    QA->>GH: Publica rama y abre Pull Request detallado (Ref #X)
+    GH->>Cloud: Dispara GitHub Actions CI/CD para build & deploy en la nube
+    GH-->>Dev: Notificación de PR listo y despliegue exitoso
 ```
 
-### Roles Definidos en `.gemini/agents/agents_registry.json`:
+### Roles Definidos en `.agents/agents/agents_registry.json`:
 1. **`solution-architect`**: Modela entidades de dominio, casos de uso y diagramas de flujo antes de escribir código.
-2. **`python-ai-engineer`**: Implementa servicios FastAPI no bloqueantes (`async def`), validaciones Pydantic y conectores de IA/LLMs.
-3. **`backend-core-dev`**: Gestiona lógica de negocio transaccional bajo XAMPP, consultas preparadas PDO y respuestas JSON normalizadas.
-4. **`ui-ux-designer`**: Construye componentes accesibles con estados interactivos completos (`idle`, `loading`, `error`, `empty`).
-5. **`qa-security-auditor`**: Garantiza cobertura de pruebas, previene inyecciones/vulnerabilidades y entrega mediante GitHub MCP.
+2. **`python-ai-engineer`**: Implementa microservicios FastAPI no bloqueantes (`async def`), agentes autónomos, validaciones Pydantic v2 y conectores RAG.
+3. **`backend-core-dev`**: Gestiona lógica de negocio transaccional bajo XAMPP, consultas preparadas PDO y respuestas JSON normalizadas para el Arquetipo A.
+4. **`ui-ux-designer`**: Construye componentes accesibles con estados interactivos completos (`idle`, `loading`, `error`, `empty`) y diseño glassmorphic.
+5. **`qa-security-auditor`**: Garantiza cobertura de pruebas, previene inyecciones/vulnerabilidades y entrega mediante GitHub MCP hacia CI/CD de GCP/AWS.
 
 ---
 
-## 🔌 5. Integración GitHub MCP Server
+## 🔌 6. Integración GitHub MCP Server
 
 Gracias a **Model Context Protocol (MCP)**, los agentes tienen acceso directo y seguro a la API de GitHub:
 
@@ -137,35 +159,35 @@ Gracias a **Model Context Protocol (MCP)**, los agentes tienen acceso directo y 
 
 ---
 
-## ⚡ 6. Ecosistema de Habilidades Autónomas (Agent Skills)
+## ⚡ 7. Ecosistema de Habilidades Autónomas (Agent Skills)
 
 Además de reglas y agentes, el framework incorpora **habilidades autónomas** cargadas bajo demanda (*on-demand progressive disclosure*), disponibles tanto a nivel local (`.agents/skills/`) como a nivel global del sistema (`~/.gemini/config/skills/`):
 
 | Habilidad (Skill) | Ámbito y Propósito | Archivos Clave |
 | :--- | :--- | :--- |
-| **`brand-identity`** | **Tri-Adaptativo**: Marca personal de **Rogerr Carvajal** (especialista en Modelos de IA & Agentes Autónomos), línea base CEIA/SWGA (dark mode + glassmorphism), estándares de stack (PHP 8+, PostgreSQL 14+, Python 3.11+) y adaptación a cualquier proyecto. | `SKILL.md`, `resources/developer-personal-brand.md`, `resources/brand-analyzer.md`, `resources/design.md`, `resources/tech-stack.md`, `resources/voice-tone.md` |
+| **`brand-identity`** | **Multi-Arquetipo**: Marca personal de **Rogerr Carvajal** (especialista en Modelos de IA & Agentes Autónomos), soporte dual para Arquetipo A (CEIA/SWGA: PHP 8+, PostgreSQL) y Arquetipo B (Cloud-Native AI-First: Python FastAPI, pgvector, Docker, GCP/AWS). | `SKILL.md`, `resources/developer-personal-brand.md`, `resources/brand-analyzer.md`, `resources/design.md`, `resources/tech-stack.md`, `resources/voice-tone.md` |
 | **`changelog-generator`** | Transforma historiales de commits técnicos de Git en notas de versión profesionales categorizadas (features, mejoras, correcciones) para usuarios finales y releases de GitHub. | `SKILL.md` |
 | **`skill-creator`** | Suite integral basada en la guía oficial `creador-de-skills-antigravity.md` para crear, optimizar, evaluar y ejecutar benchmarks de nuevas habilidades con validación sintáctica y visualizador web. | `SKILL.md`, `references/creador-de-skills-antigravity.md`, `scripts/`, `eval-viewer/`, `agents/` |
 | **`sprint-issue-developer`** | Metodología estructurada en 4 fases para resolver Issues de Sprints técnicos con bucle de autocorrección (looping) guiado por logs hasta 0 fallos, trazabilidad `Ref #X` y PRs limpios. | `SKILL.md`, `prompts/sprint_issue_development_guide.md` |
 
 ---
 
-## 📁 7. Estructura del Repositorio
+## 📁 8. Estructura del Repositorio
 
 ```text
 antigravity-deep-configuration/
 ├── .agents/                              # Raíz Oficial de Personalización Antigravity
 │   ├── rules/
 │   │   ├── 00-global-principles.md       # Reglas Globales (Nivel 1)
-│   │   ├── 10-workspace-architecture.md  # Arquitectura Políglota y DDD (Nivel 2)
-│   │   ├── 20-python-ai-services.md      # Microservicios Python & IA (Nivel 3)
+│   │   ├── 10-workspace-architecture.md  # Arquitectura Multi-Arquetipo y DDD (Nivel 2)
+│   │   ├── 20-python-ai-services.md      # Microservicios Python, Agentes & IA (Nivel 3)
 │   │   ├── 30-backend-services.md        # Backend PHP 8.2+ y XAMPP (Nivel 3)
 │   │   ├── 40-frontend-uiux.md           # Diseño UI/UX y Tailwind (Nivel 3)
-│   │   └── 50-security-and-devops.md     # Seguridad OWASP y DevOps (Nivel 3)
+│   │   └── 50-security-and-devops.md     # Seguridad OWASP, DevOps y Cloud (Nivel 3)
 │   ├── agents/
 │   │   └── agents_registry.json          # Registro de Roles Multi-Agente con Skills asociadas
 │   ├── skills/                           # Habilidades Autónomas del Workspace
-│   │   ├── brand-identity/               # Marca Personal Rogerr Carvajal & Diseño Tri-Adaptativo
+│   │   ├── brand-identity/               # Marca Personal Rogerr Carvajal & Multi-Arquetipo
 │   │   ├── changelog-generator/          # Generador de Notas de Lanzamiento desde Git
 │   │   ├── skill-creator/                # Suite Oficial de Creación y Evaluación de Habilidades
 │   │   └── sprint-issue-developer/       # Metodología de Desarrollo de Sprints en Bucle
@@ -175,18 +197,28 @@ antigravity-deep-configuration/
 │   ├── agents/                           # Espejo de agentes
 │   ├── skills/                           # Espejo de habilidades
 │   └── mcp_config.json                   # Espejo de MCP
+├── .github/                              # Plantillas y Automatización GitHub Actions
+│   ├── ISSUE_TEMPLATE/                   # Plantillas para Bugs, Features y Docs
+│   ├── workflows/
+│   │   └── ci.yml                        # Pipeline de Calidad, Pytest y Validación Sintáctica
+│   └── PULL_REQUEST_TEMPLATE.md          # Estándar de PRs con Trazabilidad y Checklist
 ├── Docs/
 │   ├── PLAN_IMPLEMENTACION_ANTIGRAVITY.md# Plan maestro y alcance técnico
 │   ├── WALKTHROUGH_EJECUCION.md         # Guía práctica paso a paso
 │   ├── GUIA_HABILIDADES_AGENTICAS.md    # Guía detallada del ecosistema de habilidades
 │   ├── creador-de-skills-antigravity.md # Manual Oficial de Creación de Skills para Antigravity
 │   └── [respaldos de todas las reglas]  # Copia de seguridad local
+├── tests/                                # Suite Automatizada de Pruebas Unitarias e Integración
+│   ├── test_skills.py                    # Validación de formato y sintaxis de Skills
+│   ├── test_json_configs.py              # Validación de integridad de registros y MCP
+│   ├── test_rules_structure.py          # Verificación de presencia y contenido de reglas
+│   └── test_utils.py                     # Pruebas de utilitarios de análisis
 └── README.md                             # Documentación principal de la comunidad
 ```
 
 ---
 
-## 🚀 8. Guía de Inicio Rápido
+## 🚀 9. Guía de Inicio Rápido
 
 1. **Clonar el proyecto:**
    ```bash
@@ -196,11 +228,11 @@ antigravity-deep-configuration/
 2. **Configurar GitHub MCP:**
    - Define tu Personal Access Token (PAT) en la configuración de Antigravity MCP o en tu archivo `.env`.
 3. **Iniciar en Antigravity IDE:**
-   - Abre la carpeta del proyecto en Google Antigravity. Las reglas de `.gemini/rules/` se cargarán automáticamente en cada sesión de chat y en cada edición de archivo.
+   - Abre la carpeta del proyecto en Google Antigravity. Las reglas de `.gemini/rules/` y `.agents/rules/` se cargarán automáticamente en cada sesión de chat y en cada edición de archivo.
 4. **Desarrollar con Agentes Autónomos:**
-   - Usa el comando `/plan` para que el agente `solution-architect` estructure cualquier requerimiento antes de implementarlo.
+   - Usa el comando `/plan` para que el agente `solution-architect` estructure cualquier requerimiento antes de implementarlo, detectando automáticamente el arquetipo aplicable (A o B).
 
 ---
 
-## 📜 8. Licencia y Créditos
-Desarrollado para la comunidad de desarrolladores de **Google Antigravity**, basado en las mejores prácticas de ingeniería de software, arquitectura hexagonal y orquestación agentica moderna.
+## 📜 10. Licencia y Créditos
+Desarrollado para la comunidad de desarrolladores de **Google Antigravity**, basado en las mejores prácticas de ingeniería de software, arquitectura hexagonal, orquestación agentica y despliegue cloud-native.
