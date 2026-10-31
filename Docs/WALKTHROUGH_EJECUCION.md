@@ -80,3 +80,12 @@ El repositorio cuenta con una suite completa de pruebas en GitHub Actions (`.git
   ```bash
   python -m pytest tests/ -v
   ```
+
+---
+
+## 7. Operación del Autonomous Agent Execution Loop
+Para ejecutar tareas con el bucle autónomo sin errores:
+1. Consultar la guía [`Docs/SELECCION_SKILLS_Y_AGENT_LOOP.md`](./SELECCION_SKILLS_Y_AGENT_LOOP.md).
+2. Utilizar el prompt estandarizado con backpressure y looping silencioso para que el agente resuelva fallos internamente antes de emitir su reporte.
+3. Certificar que el checklist de verificación empírica esté completo antes de autorizar el merge en GitHub.
+

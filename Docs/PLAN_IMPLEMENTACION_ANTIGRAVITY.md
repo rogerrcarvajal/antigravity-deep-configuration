@@ -97,3 +97,12 @@ Se integraron y ajustaron habilidades autónomas tanto a nivel local (`.agents/s
 2. **`changelog-generator`**: Generador automatizado de notas de release profesionales a partir del historial de commits de Git.
 3. **`skill-creator`**: Framework integral con scripts de evaluación, validación y banco de pruebas para crear y refinar nuevas habilidades.
 4. **`sprint-issue-developer`**: Flujo metódico para resolver Issues técnicos en bucle guiado por pruebas hasta 0 fallos, con trazabilidad `Ref #X`.
+
+---
+
+## 6. Curaduría de Repositorios y Autonomous Agent Execution Loop
+Conforme a la guía maestra [`Docs/SELECCION_SKILLS_Y_AGENT_LOOP.md`](./SELECCION_SKILLS_Y_AGENT_LOOP.md), el ecosistema incorpora:
+- **Curaduría de Skills de Élite:** Filtrado de repositorios masivos (`sickn33/agentic-awesome-skills`, `obra/superpowers`, `addyosmani/agent-skills`, `Leonxlnx/taste-skill`) en un **Power Pack de 12 Skills Esenciales** para prevenir sobrecarga de contexto (*Agent Overload*).
+- **Autonomous Agent Execution Loop (`Gy4ECDG_hI4`):** Ciclo estricto y determinista en 7 etapas (Plan & Align -> Workspace Isolation -> Tool Execution -> Backpressure Observation -> Self-Correction Looping a 0 fallos -> Gating Empírico -> GitHub MCP Delivery).
+- **Despliegue Multi-Cloud:** Integración CI/CD desde GitHub Actions hacia Google Cloud Platform (Cloud Run) y AWS (ECS / App Runner).
+

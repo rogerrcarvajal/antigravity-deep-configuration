@@ -205,6 +205,7 @@ antigravity-deep-configuration/
 ├── Docs/
 │   ├── PLAN_IMPLEMENTACION_ANTIGRAVITY.md# Plan maestro y alcance técnico
 │   ├── WALKTHROUGH_EJECUCION.md         # Guía práctica paso a paso
+│   ├── SELECCION_SKILLS_Y_AGENT_LOOP.md # Matriz de skills de élite y diseño del Agent Loop
 │   ├── GUIA_HABILIDADES_AGENTICAS.md    # Guía detallada del ecosistema de habilidades
 │   ├── creador-de-skills-antigravity.md # Manual Oficial de Creación de Skills para Antigravity
 │   └── [respaldos de todas las reglas]  # Copia de seguridad local
