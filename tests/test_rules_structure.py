@@ -40,6 +40,7 @@ def test_docs_presence():
         repo_root / "Docs" / "GUIA_HABILIDADES_AGENTICAS.md",
         repo_root / "Docs" / "creador-de-skills-antigravity.md",
         repo_root / "Docs" / "SELECCION_SKILLS_Y_AGENT_LOOP.md",
+        repo_root / "Docs" / "INTEGRACION_GRAPHIFY_KNOWLEDGE_GRAPH.md",
     ]
     for doc in docs:
         assert doc.exists(), f"Documentation file missing: {doc}"
