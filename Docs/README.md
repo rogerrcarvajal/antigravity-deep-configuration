@@ -188,6 +188,7 @@ Gracias a **Model Context Protocol (MCP)**, los agentes tienen acceso directo y 
 
 | Habilidad (Skill) | Ámbito y Propósito | Archivos Clave |
 | :--- | :--- | :--- |
+| **`egm-auditoria`** | **Auditoría Elephant-Goldfish Model (EGM):** Estrategia de Google con subagentes independientes sin memoria (*Goldfish*) para auditar especificaciones, código y apps (incluye los 4 peces en español: cliente, desconfiado, protección de datos y técnico). | `SKILL.md`, `peces/*.md`, `plantilla-contexto/*.md` |
 | **`graphify`** | **Knowledge Graph & Token Saver:** Convierte cualquier carpeta de código en un grafo de conocimiento navegable; consultas BFS/DFS (`query`), caminos de dependencias (`path`), explicaciones (`explain`) y sincronización incremental (`update .`). | `SKILL.md`, `references/query.md`, `references/update.md`, `references/exports.md`, `references/extraction-spec.md` |
 | **`brand-identity`** | **Multi-Arquetipo**: Marca personal de **Rogerr Carvajal** (especialista en Modelos de IA & Agentes Autónomos), soporte dual para Arquetipo A (CEIA/SWGA: PHP 8+, PostgreSQL) y Arquetipo B (Cloud-Native AI-First: Python FastAPI, pgvector, Docker, GCP/AWS). | `SKILL.md`, `resources/developer-personal-brand.md`, `resources/design.md`, `resources/tech-stack.md` |
 | **`changelog-generator`** | Transforma historiales de commits técnicos de Git en notas de versión profesionales categorizadas (features, mejoras, correcciones) para usuarios finales y releases de GitHub. | `SKILL.md` |
@@ -208,12 +209,15 @@ antigravity-deep-configuration/
 │   │   ├── 30-backend-services.md        # Backend PHP 8.2+ y XAMPP (Nivel 3)
 │   │   ├── 40-frontend-uiux.md           # Diseño UI/UX y Tailwind (Nivel 3)
 │   │   ├── 50-security-and-devops.md     # Seguridad OWASP, DevOps y Cloud (Nivel 3)
+│   │   ├── elephant-goldfish-model.md    # Estrategia de Auditoría EGM (Elephant-Goldfish)
 │   │   └── graphify.md                   # Regla Always-On: Consulta Semántica y Ahorro Tokens
 │   ├── workflows/
+│   │   ├── egm-auditar.md                # Workflow de Auditoría Independiente con Peces
 │   │   └── graphify.md                   # Workflow Oficial de Ejecución Graphify
 │   ├── agents/
 │   │   └── agents_registry.json          # Registro de Roles Multi-Agente con Skills asociadas
 │   ├── skills/                           # Habilidades Autónomas del Workspace
+│   │   ├── egm-auditoria/                # Auditoría Elephant-Goldfish Model + Kit en Español
 │   │   ├── graphify/                     # Grafo de Conocimiento y Navegación AST
 │   │   ├── brand-identity/               # Marca Personal Rogerr Carvajal & Multi-Arquetipo
 │   │   ├── changelog-generator/          # Generador de Notas de Lanzamiento desde Git
@@ -223,6 +227,7 @@ antigravity-deep-configuration/
 ├── .gemini/                              # Compatibilidad y Espejo Dual
 ├── .github/                              # Plantillas y Automatización GitHub Actions
 ├── Docs/
+│   ├── INTEGRACION_ELEPHANT_GOLDFISH_MODEL.md  # Guía del Modelo Elephant-Goldfish & Kit Auditoría
 │   ├── INTEGRACION_GRAPHIFY_KNOWLEDGE_GRAPH.md # Guía Completa de Graphify & Ahorro de Tokens
 │   ├── PLAN_IMPLEMENTACION_ANTIGRAVITY.md      # Plan maestro y alcance técnico
 │   ├── WALKTHROUGH_EJECUCION.md               # Guía práctica paso a paso
