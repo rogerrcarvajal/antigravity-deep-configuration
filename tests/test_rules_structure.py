@@ -42,6 +42,7 @@ def test_docs_presence():
         repo_root / "Docs" / "SELECCION_SKILLS_Y_AGENT_LOOP.md",
         repo_root / "Docs" / "INTEGRACION_GRAPHIFY_KNOWLEDGE_GRAPH.md",
         repo_root / "Docs" / "INTEGRACION_ELEPHANT_GOLDFISH_MODEL.md",
+        repo_root / "Docs" / "GUIA_GEMINI4_ORCHESTRATOR_Y_SWARM.md",
     ]
     for doc in docs:
         assert doc.exists(), f"Documentation file missing: {doc}"

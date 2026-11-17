@@ -188,6 +188,7 @@ Gracias a **Model Context Protocol (MCP)**, los agentes tienen acceso directo y 
 
 | Habilidad (Skill) | Ámbito y Propósito | Archivos Clave |
 | :--- | :--- | :--- |
+| **`gemini4-orchestrator-swarm`** | **Orquestación Gemini 4 & `/swarm` Pro:** Gestión inteligente de `Orchestrator (Argon)`, `Gemini 4 Argon` (cuota semanal) y `Gemini 4 Hydrogen (High/XHigh)` (cuota diaria) para desplegar enjambres `/swarm` y `run_workflow` sin agotar cuotas. | `SKILL.md`, `references/model-tiers-and-quotas.md`, `references/swarm-playbooks.md` |
 | **`egm-auditoria`** | **Auditoría Elephant-Goldfish Model (EGM):** Estrategia de Google con subagentes independientes sin memoria (*Goldfish*) para auditar especificaciones, código y apps (incluye los 4 peces en español: cliente, desconfiado, protección de datos y técnico). | `SKILL.md`, `peces/*.md`, `plantilla-contexto/*.md` |
 | **`graphify`** | **Knowledge Graph & Token Saver:** Convierte cualquier carpeta de código en un grafo de conocimiento navegable; consultas BFS/DFS (`query`), caminos de dependencias (`path`), explicaciones (`explain`) y sincronización incremental (`update .`). | `SKILL.md`, `references/query.md`, `references/update.md`, `references/exports.md`, `references/extraction-spec.md` |
 | **`brand-identity`** | **Multi-Arquetipo**: Marca personal de **Rogerr Carvajal** (especialista en Modelos de IA & Agentes Autónomos), soporte dual para Arquetipo A (CEIA/SWGA: PHP 8+, PostgreSQL) y Arquetipo B (Cloud-Native AI-First: Python FastAPI, pgvector, Docker, GCP/AWS). | `SKILL.md`, `resources/developer-personal-brand.md`, `resources/design.md`, `resources/tech-stack.md` |
@@ -210,13 +211,16 @@ antigravity-deep-configuration/
 │   │   ├── 40-frontend-uiux.md           # Diseño UI/UX y Tailwind (Nivel 3)
 │   │   ├── 50-security-and-devops.md     # Seguridad OWASP, DevOps y Cloud (Nivel 3)
 │   │   ├── elephant-goldfish-model.md    # Estrategia de Auditoría EGM (Elephant-Goldfish)
+│   │   ├── gemini4-orchestrator-swarm.md # Gobernanza Gemini 4 (Argon/Hydrogen) y /swarm
 │   │   └── graphify.md                   # Regla Always-On: Consulta Semántica y Ahorro Tokens
 │   ├── workflows/
 │   │   ├── egm-auditar.md                # Workflow de Auditoría Independiente con Peces
+│   │   ├── swarm-pro.md                  # Workflow de Enjambre Paralelo Optimizado para Pro
 │   │   └── graphify.md                   # Workflow Oficial de Ejecución Graphify
 │   ├── agents/
 │   │   └── agents_registry.json          # Registro de Roles Multi-Agente con Skills asociadas
 │   ├── skills/                           # Habilidades Autónomas del Workspace
+│   │   ├── gemini4-orchestrator-swarm/   # Orquestador Gemini 4 & Enjambres /swarm Pro
 │   │   ├── egm-auditoria/                # Auditoría Elephant-Goldfish Model + Kit en Español
 │   │   ├── graphify/                     # Grafo de Conocimiento y Navegación AST
 │   │   ├── brand-identity/               # Marca Personal Rogerr Carvajal & Multi-Arquetipo
@@ -227,6 +231,7 @@ antigravity-deep-configuration/
 ├── .gemini/                              # Compatibilidad y Espejo Dual
 ├── .github/                              # Plantillas y Automatización GitHub Actions
 ├── Docs/
+│   ├── GUIA_GEMINI4_ORCHESTRATOR_Y_SWARM.md    # Guía de Gemini 4 (Argon/Hydrogen), Orchestrator y /swarm
 │   ├── INTEGRACION_ELEPHANT_GOLDFISH_MODEL.md  # Guía del Modelo Elephant-Goldfish & Kit Auditoría
 │   ├── INTEGRACION_GRAPHIFY_KNOWLEDGE_GRAPH.md # Guía Completa de Graphify & Ahorro de Tokens
 │   ├── PLAN_IMPLEMENTACION_ANTIGRAVITY.md      # Plan maestro y alcance técnico
