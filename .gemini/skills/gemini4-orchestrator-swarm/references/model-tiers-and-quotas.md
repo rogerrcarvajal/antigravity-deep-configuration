@@ -1,23 +1,31 @@
-# Niveles de Modelos Gemini 4 y Gestión de Cuotas en Gemini Pro
+# Niveles de Modelos Gemini 4 (Neon, Argon, Hydrogen) y Gestión de Cuotas en Gemini Pro
 
-## 1. Mapa de Modelos Disponibles en tu Cuenta Gemini Pro (`g1-pro`)
+## 1. Inventario Completo Verificado en tu Cuenta Gemini Pro (`swarm{action:"models", all:true}`)
 
-Resultados verificados directamente del motor `swarm{action:"models"}` de Antigravity:
-
-| Familia | Modelos Disponibles | Reinicio de Cuota | Recomendación de Uso |
-| :--- | :--- | :--- | :--- |
-| **Orchestrator** | `Orchestrator (Argon)` (`gemini-pro-orchestrator-g1-pro`) | **Semanal** (7 días) | Úsalo como modo principal cuando trabajes en una sola conversación que combine diseño arquitectónico y codificación iterativa. |
-| **Gemini 4 Argon** | `Low`, `Medium`, `High` (`gemini-4-argon-*`) | **Semanal** (7 días) | Modela decisiones complejas, especificaciones EGM (*Elephant*), depuración profunda y diseño de contratos. Evita lanzar enjambres masivos sobre Argon para proteger tu cuota semanal. |
-| **Gemini 4 Hydrogen** | `Low`, `Medium`, `High`, `XHigh` (`gemini-4-hydrogen-*`) | **Diario** (24 horas) | Tu caballo de batalla ilimitado día a día. `Hydrogen (XHigh)` y `Hydrogen (High)` ofrecen razonamiento espacial y técnico de altísimo nivel con cuota que se recarga cada 24 horas. Ideal para workers de `/swarm`. |
-| **Claude 5.5** | `Claude Opus 5.5` y `Claude Sonnet 5.5` (`Low`, `Medium`, `High`) | **Diario** (24 horas) | Excelentes como verificadores independientes (*Goldfish* o `verifier` en `/swarm`) con recarga diaria. |
-| **Gemini 3.8 Flash** | `Low`, `Medium`, `High` (`gemini-3.8-flash-*`) | **Diario** (24 horas) | Ideal para subagentes de navegador (`browser`), búsquedas rápidas y `run_workflow` de alto volumen. |
+| Familia | Modelos Disponibles en tu Selector | Reinicio de Cuota | Ventana y Características | Recomendación Estratégica |
+| :--- | :--- | :--- | :--- | :--- |
+| **Orchestrator (Neon)** ⭐ | `Orchestrator (Neon)` (`gemini-pro-orchestrator-neon`) | **Diario (24 horas)** | **1M tokens unificados (In/Out)** · Coordinación dinámica Neon + Hydrogen | **Tu nuevo modo por defecto para casi todo.** Combina el cerebro de programación de Neon con la velocidad de Hydrogen y se recarga cada 24h. |
+| **Gemini 4 Neon** ⭐ | `Low`, `Medium`, `High`, `XHigh` (`gemini-4-neon-*`) | **Diario (24 horas)** | **1M tokens unificados**, hasta 3x más rápido que Carbon, optimizado en coste/tarea | Ideal para programación compleja, refactorizaciones grandes, análisis de repositorios enteros y workers principales de `/swarm`. |
+| **Gemini 4 Hydrogen** | `Low`, `Medium`, `High`, `XHigh` (`gemini-4-hydrogen-*`) | **Diario (24 horas)** | Alta velocidad, eficiencia y razonamiento espacial | Excelente para workers paralelos de ejecución rápida, generación de UI, tests y subtareas en `/swarm`. |
+| **Orchestrator (Argon)** | `Orchestrator (Argon)` (`gemini-pro-orchestrator-g1-pro`) | **Semanal (7 días)** | Coordinación Argon + Hydrogen | Úsalo como reserva estratégica cuando busques el estilo de razonamiento de Argon o si agotaste la cuota diaria de Neon. |
+| **Gemini 4 Argon** | `Low`, `Medium`, `High` (`gemini-4-argon-*`) | **Semanal (7 días)** | Razonamiento profundo de largo horizonte | Resérvalo para decisiones arquitectónicas puntuales (*Elephant*) para no agotar su cuota semanal en tareas repetitivas. |
+| **Claude 5.5** | `Claude Opus 5.5` y `Claude Sonnet 5.5` (`Low`, `Medium`, `High`) | **Diario (24 horas)** | Diversidad de familia de modelo | Perfectos como revisores independientes (*Goldfish* o `verifier` en `/swarm`). |
+| **Gemini 3.8 Flash** | `Low`, `Medium`, `High` (`gemini-3.8-flash-*`) | **Diario (24 horas)** | Latencia mínima | Subagentes de navegador (`browser`) y `run_workflow` masivos. |
 
 ---
 
-## 2. Cómo Suplir a `Gemini 4 Carbon` en el Plan Gemini Pro
+## 2. Gemini 4 Neon vs. Carbon, Argon y Hydrogen
 
-En las demostraciones de Antigravity, **Gemini 4 Carbon** se utiliza como coordinador pesado junto a **Hydrogen**. En tu plan **Gemini Pro**, logras **el mismo flujo arquitectónico** combinando tres piezas que sí tienes activas al 100%:
+Según la arquitectura oficial de la familia Gemini 4:
 
-1. **`Orchestrator (Argon)`** hace exactamente el papel de *Planner + Executor* automático: **Argon** planifica la arquitectura y **Hydrogen** ejecuta los cambios y tests.
-2. **`Gemini 4 Hydrogen (XHigh)`** activa el presupuesto máximo de pensamiento (*extra-high thinking*) de Hydrogen, alcanzando métricas de resolución de código equivalentes a modelos frontera pero consumiendo **cuota diaria** en lugar de semanal.
-3. **Grafo de Conocimiento (`graphify`) + Auditoría EGM (`egm-auditoria`):** Al darle a Argon o Hydrogen el subgrafo exacto de `graphify` y auditar con peces independientes, reduces el contexto necesario en un 80% y aumentas la precisión arquitectónica sin requerir Carbon.
+- **Posicionamiento:** **Gemini 4 Neon** se sitúa como el punto de equilibrio óptimo entre *Hydrogen* y *Carbon*: ofrece inteligencia de programación de nivel frontera a **3 veces la velocidad de Carbon** y una fracción del coste por tarea.
+- **Ventana de Contexto Unificada de 1 Millón de Tokens:** Tanto la entrada como la salida comparten el pool de 1M de tokens, lo que evita cuellos de botella al generar archivos largos o analizar múltiples módulos simultáneamente.
+- **Ventaja en Gemini Pro:** Al contar con **reinicio de cuota diario (cada 24 horas)** tanto en `Gemini 4 Neon (Low/Medium/High/XHigh)` como en `Orchestrator (Neon)`, puedes ejecutar sesiones intensivas de programación y enjambres `/swarm` todos los días sin temor a consumir el presupuesto semanal de Argon.
+
+---
+
+## 3. Estrategia de Escalado y Failover de Cuotas
+
+1. **Nivel Primario (Uso Diario Intensivo):** `Orchestrator (Neon)` o `Gemini 4 Neon (Medium / High / XHigh)`.
+2. **Nivel de Ejecución Masiva en Paralelo (`/swarm` workers):** Combinación de `gemini-4-neon-medium` / `gemini-4-neon-high` (módulos complejos) + `gemini-4-hydrogen-high` (módulos rápidos).
+3. **Nivel de Reserva (Failover):** Si en una jornada extrema se alcanza el límite diario de Neon, cambia en caliente con `swarm{action:"model", model:"gemini-4-hydrogen-xhigh"}` (cuota diaria independiente) o a `Orchestrator (Argon)` / `gemini-4-argon-medium` (reserva semanal).

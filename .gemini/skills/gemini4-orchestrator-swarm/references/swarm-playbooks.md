@@ -1,44 +1,50 @@
-# Playbooks Prácticos de `/swarm` y `run_workflow` en Antigravity
+# Playbooks Prácticos de `/swarm` y `run_workflow` con Gemini 4 Neon
 
-## Playbook 1: Desarrollo Full-Stack en Paralelo (`/swarm`)
+## Playbook 1: Enjambre Full-Stack de Alto Rendimiento con Gemini 4 Neon (`/swarm-pro`)
 
-Cuando necesitas construir o refactorizar Backend, Frontend y Pruebas al mismo tiempo sin colisiones:
+Aprovecha la ventana de **1M de tokens** y la **cuota diaria** de **Gemini 4 Neon** junto con **Hydrogen**:
 
-1. **Título del Swarm:**
+1. **Preparación:** Selecciona **`Gemini 4 Neon (Medium o High)`** u **`Orchestrator (Neon)`** en tu selector de modelo.
+2. **Título del Swarm:**
    ```json
-   swarm{"action": "title", "title": "Feature Full-Stack en Paralelo"}
+   swarm{"action": "title", "title": "Feature Full-Stack con Gemini 4 Neon"}
    ```
-2. **Despliegue de Workers (sin colisión de archivos):**
-   - **`backend`** (`workspace: "share"`): Posee `src/api/` y `src/models/`. Prohibido tocar `src/ui/`. Al terminar publica el contrato y menciona a `@verifier`.
-   - **`frontend`** (`workspace: "share"`): Posee `src/ui/` y `src/components/`. Prohibido tocar `src/api/`. Al terminar menciona a `@verifier`.
-   - **`verifier`** (`workspace: "inherit"`): Revisa los diffs de `@backend` y `@frontend`, ejecuta la suite de tests y reporta fallos mencionando al autor correspondiente o a `@coordinator` si todo pasa.
+3. **Despliegue de Workers (sin colisión de archivos):**
+   - **`architect-backend`** (`workspace: "share"`, `model: "gemini-4-neon-high"`): Posee `src/api/` y `src/domain/`. Diseña e implementa endpoints y lógica compleja. Prohibido tocar `src/ui/`. Al terminar publica resumen y menciona a `@verifier`.
+   - **`frontend-ui`** (`workspace: "share"`, `model: "gemini-4-hydrogen-high"`): Posee `src/ui/` y `src/components/`. Construye componentes reactivos/glassmorphic. Prohibido tocar `src/api/`. Al terminar menciona a `@verifier`.
+   - **`verifier`** (`workspace: "inherit"`, `model: "gemini-4-neon-high"`): Revisa los diffs de `@architect-backend` y `@frontend-ui`, ejecuta la suite de pruebas y reporta en el tablero (`@architect-backend corrige X` o `@coordinator listo para merge`).
 
 ---
 
-## Playbook 2: Auditoría y Corrección Masiva con Verificador Cruzado
+## Playbook 2: Auditoría de Contexto Masivo (1M Tokens) + Corrección en Paralelo
 
-1. Lanza N workers por módulo (`tasks` o `add` individual con `workspace: "share"`).
-2. Añade 1 `verifier` por cada 3 workers.
-3. Usa mensajes cortos referenciando el número de secuencia del tablero (`@verifier revisa #3 y #5`).
-4. Antes de cerrar el swarm, pide a cada autor o al coordinador fusionar las ramas de `workspace: "share"` en el workspace principal antes de ejecutar `swarm{action:"kill"}`.
+Cuando necesitas analizar un repositorio grande o documento técnico extenso aprovechando el millón de tokens de **Gemini 4 Neon**:
+
+1. **Consulta previa con Graphify:** Obtén el mapa estructural con `graphify query` o `graphify path`.
+2. **Despliegue en `/swarm`:**
+   - Asigna a un worker `neon-analyzer` (`gemini-4-neon-xhigh`, `workspace: "inherit"`) la inspección profunda de contratos y dependencias críticas.
+   - Asigna workers ejecutores (`gemini-4-neon-medium` o `gemini-4-hydrogen-high`, `workspace: "share"`) por cada módulo a corregir.
+   - Añade 1 `verifier` por cada 3 autores.
+3. **Cierre seguro:** Fusiona las ramas de `workspace: "share"` en tu copia principal antes de ejecutar `swarm{action:"kill"}`.
 
 ---
 
 ## Playbook 3: Fan-Out Programático con `run_workflow`
 
-Cuando tienes una lista de archivos o módulos que deben analizarse o transformarse siguiendo exactamente la misma plantilla sin necesidad de que los agentes conversen entre sí en un tablero:
+Para procesar lotes de archivos en paralelo mediante script Python sin sobrecargar el tablero de `/swarm`:
 
 ```python
-phase("Descubrimiento")
+phase("Descubrimiento con Contexto Amplio")
 archivos = await agent(
-    "Lista los archivos principales del módulo a revisar. Solo rutas relativas.",
+    "Lista los archivos clave del proyecto que requieren actualización o auditoría. Solo rutas relativas.",
     schema={"type": "array", "items": {"type": "string"}},
-    role="Explorador"
+    role="Explorador Neon",
+    model="pro"
 )
 
-phase("Análisis en Paralelo")
+phase("Ejecución Paralela Optimizada en Coste")
 reportes = await parallel(archivos, lambda f: agent(
-    f"Analiza {f} buscando problemas de tipado, seguridad o acoplamiento. Resume en máximo 3 puntos.",
+    f"Revisa {f} buscando vulnerabilidades, errores de tipado o deuda técnica. Máximo 3 puntos accionables.",
     schema={"type": "string"},
     role=f"Auditor {f}",
     model="flash"
