@@ -1,55 +1,62 @@
-# Playbooks Prácticos de `/swarm` y `run_workflow` con Gemini 4 Neon
+# Playbooks Prácticos de Orchestrator y `/swarm` con Carbon · Neon · Hydrogen
 
-## Playbook 1: Enjambre Full-Stack de Alto Rendimiento con Gemini 4 Neon (`/swarm-pro`)
+## Playbook 1: Arquitectura Crítica en Sesión Única con `Orchestrator (Carbon)`
 
-Aprovecha la ventana de **1M de tokens** y la **cuota diaria** de **Gemini 4 Neon** junto con **Hydrogen**:
+Para diseñar e implementar un subsistema complejo sin administrar múltiples agentes manualmente:
 
-1. **Preparación:** Selecciona **`Gemini 4 Neon (Medium o High)`** u **`Orchestrator (Neon)`** en tu selector de modelo.
-2. **Título del Swarm:**
+1. Selecciona **`Orchestrator (Carbon)`** (o **`Gemini 4 Carbon (Medium/High)`**) en el selector de modelos.
+2. Si existe grafo en `graphify-out/`, el orquestador consultará primero `graphify query` / `path` ahorrando hasta un 80% de tokens.
+3. **Carbon** formulará el plan arquitectónico y supervisará mientras **Hydrogen** escribe el código, ejecuta la suite de pruebas y valida el resultado en bucle hasta 0 errores.
+
+---
+
+## Playbook 2: Enjambre de Élite con la Tríada Completa (`/swarm-pro`)
+
+Cuando un proyecto grande puede dividirse en varios frentes simultáneos sin colisión de archivos:
+
+1. **Título del Swarm:**
    ```json
-   swarm{"action": "title", "title": "Feature Full-Stack con Gemini 4 Neon"}
+   swarm{"action": "title", "title": "Despliegue Paralelo Tríada Gemini 4 (Carbon + Neon + Hydrogen)"}
    ```
-3. **Despliegue de Workers (sin colisión de archivos):**
-   - **`architect-backend`** (`workspace: "share"`, `model: "gemini-4-neon-high"`): Posee `src/api/` y `src/domain/`. Diseña e implementa endpoints y lógica compleja. Prohibido tocar `src/ui/`. Al terminar publica resumen y menciona a `@verifier`.
-   - **`frontend-ui`** (`workspace: "share"`, `model: "gemini-4-hydrogen-high"`): Posee `src/ui/` y `src/components/`. Construye componentes reactivos/glassmorphic. Prohibido tocar `src/api/`. Al terminar menciona a `@verifier`.
-   - **`verifier`** (`workspace: "inherit"`, `model: "gemini-4-neon-high"`): Revisa los diffs de `@architect-backend` y `@frontend-ui`, ejecuta la suite de pruebas y reporta en el tablero (`@architect-backend corrige X` o `@coordinator listo para merge`).
+2. **Distribución Estratégica de Workers (`swarm{action:"add"}`):**
+   - **`core-architect`** (`workspace: "share"`, `model: "gemini-4-carbon-high"`): Posee el núcleo de dominio, seguridad o migraciones críticas (`src/domain/`, `src/security/`). Al terminar publica resumen y menciona a `@lead-verifier`.
+   - **`api-services`** (`workspace: "share"`, `model: "gemini-4-neon-high"`): Posee controladores, rutas e integraciones de contexto amplio (`src/api/`, `src/services/`). Prohibido editar `src/domain/` o `src/ui/`. Al terminar menciona a `@lead-verifier`.
+   - **`ui-and-tests`** (`workspace: "share"`, `model: "gemini-4-hydrogen-high"`): Posee componentes visuales y pruebas automatizadas (`src/ui/`, `tests/`). Al terminar menciona a `@lead-verifier`.
+   - **`lead-verifier`** (`workspace: "inherit"`, `model: "gemini-4-carbon-medium"`): Revisa los diffs de los 3 autores, ejecuta la batería completa de tests y reporta en el tablero (`@api-services corrige X` o `@coordinator todo verificado y listo para merge`).
 
 ---
 
-## Playbook 2: Auditoría de Contexto Masivo (1M Tokens) + Corrección en Paralelo
+## Playbook 3: Auditoría Independiente EGM + Reparación en Paralelo
 
-Cuando necesitas analizar un repositorio grande o documento técnico extenso aprovechando el millón de tokens de **Gemini 4 Neon**:
+Combina **Elephant-Goldfish Model (`egm-auditoria`)** con **Gemini 4 Carbon** y **Neon**:
 
-1. **Consulta previa con Graphify:** Obtén el mapa estructural con `graphify query` o `graphify path`.
-2. **Despliegue en `/swarm`:**
-   - Asigna a un worker `neon-analyzer` (`gemini-4-neon-xhigh`, `workspace: "inherit"`) la inspección profunda de contratos y dependencias críticas.
-   - Asigna workers ejecutores (`gemini-4-neon-medium` o `gemini-4-hydrogen-high`, `workspace: "share"`) por cada módulo a corregir.
-   - Añade 1 `verifier` por cada 3 autores.
-3. **Cierre seguro:** Fusiona las ramas de `workspace: "share"` en tu copia principal antes de ejecutar `swarm{action:"kill"}`.
+1. **Fase Elephant:** Redacta la especificación o prototipo con `Orchestrator (Carbon)` o `Orchestrator (Neon)`.
+2. **Fase Goldfish:** Lanza los 4 peces sin memoria previa (`cliente`, `desconfiado`, `proteccion-datos`, `tecnico`) para detectar puntos ciegos en `goldfish_review_report.md`.
+3. **Fase Resolución en `/swarm`:** Tras aprobar qué puntos corregir, despliega un worker por módulo (`Neon` / `Hydrogen` en `workspace: "share"`) y un verificador (`Carbon` en `workspace: "inherit"`) para aplicar las correcciones simultáneamente.
 
 ---
 
-## Playbook 3: Fan-Out Programático con `run_workflow`
+## Playbook 4: Fan-Out Programático con `run_workflow`
 
-Para procesar lotes de archivos en paralelo mediante script Python sin sobrecargar el tablero de `/swarm`:
+Para transformaciones o auditorías repetitivas sobre decenas de archivos:
 
 ```python
-phase("Descubrimiento con Contexto Amplio")
+phase("Mapeo Estructural")
 archivos = await agent(
-    "Lista los archivos clave del proyecto que requieren actualización o auditoría. Solo rutas relativas.",
+    "Lista los archivos del módulo objetivo que requieren revisión. Solo rutas relativas.",
     schema={"type": "array", "items": {"type": "string"}},
-    role="Explorador Neon",
+    role="Planificador Carbon/Neon",
     model="pro"
 )
 
-phase("Ejecución Paralela Optimizada en Coste")
-reportes = await parallel(archivos, lambda f: agent(
-    f"Revisa {f} buscando vulnerabilidades, errores de tipado o deuda técnica. Máximo 3 puntos accionables.",
+phase("Inspección Masiva en Paralelo")
+hallazgos = await parallel(archivos, lambda f: agent(
+    f"Analiza {f} buscando fallos de seguridad, tipado o rendimiento. Responde en máximo 3 puntos concretos.",
     schema={"type": "string"},
-    role=f"Auditor {f}",
+    role=f"Revisor {f}",
     model="flash"
 ))
 
-for archivo, reporte in zip(archivos, reportes):
-    log(f"### {archivo}\n{reporte}")
+for archivo, h in zip(archivos, hallazgos):
+    log(f"### {archivo}\n{h}")
 ```

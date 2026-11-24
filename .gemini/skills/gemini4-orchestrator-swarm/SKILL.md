@@ -1,84 +1,92 @@
 ---
 name: gemini4-orchestrator-swarm
-description: Orquesta de forma eficiente los modelos Gemini 4 (Neon, Argon, Hydrogen y Orchestrator Neon/Argon) y despliega enjambres paralelos (/swarm y run_workflow) optimizando la cuota del plan Gemini Pro en Google Antigravity.
+description: Orquesta la triada completa Gemini 4 (Carbon, Neon, Hydrogen) y los modos Orchestrator (Carbon/Neon) junto con enjambres paralelos (/swarm y run_workflow) en el plan Gemini Pro de Google Antigravity.
 ---
 
-# Gemini 4 (Neon / Argon / Hydrogen) Orchestrator & Swarm Pro
+# Gemini 4 Full Triad (Carbon · Neon · Hydrogen) Orchestrator & Swarm Pro
 
-Habilidad estratégica para maximizar el rendimiento de la familia **Gemini 4** —con **Gemini 4 Neon** y **`Orchestrator (Neon)`** como motor estrella de programación (1 millón de tokens de ventana unificada entrada/salida y cuota diaria)— junto con **`Argon`** y **`Hydrogen`**, desplegando equipos de agentes en paralelo mediante **`/swarm`** y **`run_workflow`** en el plan **Gemini AI Pro**.
+Habilidad maestra para aprovechar al máximo la **tríada completa de Gemini 4** ahora activa al 100% en tu plan **Gemini AI Pro** (**`Carbon`**, **`Neon`** e **`Hydrogen`**), sus modos nativos **`Orchestrator (Carbon)`** y **`Orchestrator (Neon)`**, y el despliegue de equipos paralelos con **`/swarm`** y **`run_workflow`**.
 
 ---
 
-## 1. Mapa Real de Modelos Gemini 4 en tu Plan Gemini Pro
+## 1. Mapa Oficial de Modelos Activos en tu Cuenta Gemini Pro
 
-Verificado en vivo con `swarm{action:"models", all:true}` en tu cuenta **Gemini Pro**:
+Verificado en vivo mediante `swarm{action:"models", all:true}` y el selector actual de Antigravity:
 
-| Modelo en Antigravity | ID Interno (`model`) | Ciclo de Cuota | Ventana / Perfil | Rol Ideal en Ingeniería |
+| Modelo en Antigravity | ID Interno (`model`) | Estado / Ciclo Cuota | Perfil Técnico | Rol Ideal en Ingeniería |
 | :--- | :--- | :--- | :--- | :--- |
-| **Orchestrator (Neon)** ⭐ | `gemini-pro-orchestrator-neon` | **Diario (24h)** | **1M tokens unificados** | **Motor Principal Recomendado:** Planifica con Neon y delega ejecución rápida en Hydrogen con recarga diaria. |
-| **Gemini 4 Neon** (`Low` / `Medium` / `High` / `XHigh`) ⭐ | `gemini-4-neon-*` | **Diario (24h)** | **1M tokens (In/Out)**, 3x más rápido que Carbon | **Programación Compleja y Agentes:** Líder de `/swarm`, diseño multi-archivo, refactorización masiva y análisis de repositorios enteros sin gastar cuota semanal. |
-| **Gemini 4 Hydrogen** (`Low` / `Medium` / `High` / `XHigh`) | `gemini-4-hydrogen-*` | **Diario (24h)** | Alta velocidad y eficiencia | **Workers Ejecutores de `/swarm`:** Codificación paralela, ejecución de tests, UI y tareas de alta frecuencia. |
-| **Orchestrator (Argon)** | `gemini-pro-orchestrator-g1-pro` | **Semanal (7d)** | Razonamiento profundo | **Reserva Estratégica Dual:** Úsalo cuando requieras una segunda opinión arquitectónica de Argon o si agotaste la cuota diaria de Neon. |
-| **Gemini 4 Argon** (`Low` / `Medium` / `High`) | `gemini-4-argon-*` | **Semanal (7d)** | Razonamiento pesado | **Arquitecto de Reserva (Elephant):** Decisiones críticas puntuales. Protégelo de enjambres masivos por su reinicio semanal. |
-| **Claude Opus 5.5 / Sonnet 5.5** | `claude-*-5-5-*` | **Diario (24h)** | Contraste multi-modelo | **Verificador Cruzado (*Goldfish* / `verifier`):** Ideal para auditar código generado por Neon/Hydrogen. |
-| **Gemini 3.8 Flash** | `gemini-3.8-flash-*` | **Diario (24h)** | Ultraligero | **Subagentes Masivos:** `browser`, búsquedas rápidas y `run_workflow` de alto volumen. |
-| *Gemini 4 Carbon* | *Exclusivo Ultra/Enterprise* | — | — | Cubierto en Gemini Pro por **Gemini 4 Neon (`High`/`XHigh`)** + **`Orchestrator (Neon)`**. |
+| **Orchestrator (Carbon)** 🏆 | `gemini-pro-orchestrator` | ✅ Activo · Recarga 24h | **Carbon (Planner) + Hydrogen (Executor)** | **Orquestador Frontera Máximo:** Carbon diseña arquitectura compleja y supervisa; Hydrogen escribe código y corre tests en la misma sesión. |
+| **Gemini 4 Carbon** (`Low` / `Medium` / `High`) 🧠 | `gemini-4-carbon-*` | ✅ Activo · Recarga 24h | Razonamiento profundo de largo horizonte | **Arquitecto Principal (*Elephant*) y Juez Crítico:** Diseño de sistemas distribuidos, algoritmos complejos, seguridad y desbloqueo de fallos graves. |
+| **Orchestrator (Neon)** ⭐ | `gemini-pro-orchestrator-neon` | ✅ Activo · Recarga 24h | **Neon (1M Tokens) + Hydrogen** | **Orquestador Ágil Diario:** Ideal para flujos continuos rápidos con contexto unificado de 1 millón de tokens. |
+| **Gemini 4 Neon** (`Low` / `Medium` / `High` / `XHigh`) ⚡ | `gemini-4-neon-*` | ✅ Activo · Recarga 24h | **1M tokens (In/Out)**, 3x más rápido que Carbon | **Caballo de Batalla en Programación y `/swarm`:** Lectura de repositorios completos, workers de lógica pesada y refactorización multi-archivo. |
+| **Gemini 4 Hydrogen** (`Low` / `Medium` / `High` / `XHigh`) 🚀 | `gemini-4-hydrogen-*` | ✅ Activo · Recarga 24h | Alta velocidad y eficiencia espacial | **Ejecutor Paralelo Masivo:** Workers rápidos en `/swarm`, UI, tests unitarios y reemplazo directo de Flash 3.8. |
+| **Claude Opus 5.5 / Sonnet 5.5** | `claude-*-5-5-*` | ✅ Activo · Recarga 24h | Contraste multi-familia | **Verificador Independiente (*Goldfish* / `verifier`):** Revisión cruzada imparcial de diffs y planes. |
+| *Gemini 4 Argon / Orchestrator (Argon)* | `gemini-4-argon-*` | ⚠️ *Leaving Soon* | En transición | Sustituido oficialmente por **Gemini 4 Carbon** y **Gemini 4 Neon**. |
+| *Gemini 3.8 Flash* | `gemini-3.8-flash-*` | ⚠️ *Leaving Soon* | En transición | Sustituido oficialmente por **Gemini 4 Hydrogen (`Low`/`Medium`)**. |
 
 ---
 
-## 2. Por Qué Gemini 4 Neon Cambia las Reglas en Gemini Pro
+## 2. Sinergia de la Tríada Gemini 4: Carbon + Neon + Hydrogen
 
-1. **Ventana Unificada de 1 Millón de Tokens (Entrada + Salida):** Permite cargar contextos masivos (repositorios completos, especificaciones EGM, subgrafos de `graphify` y trazas de logs) y generar salidas extensas de código sin truncamiento.
-2. **Inteligencia Cercana a Carbon, 3x Más Rápido y con Cuota Diaria:** Mientras que `Argon` y `Orchestrator (Argon)` consumen una cuota que tarda **7 días** en reiniciarse, **`Gemini 4 Neon`** (`Low`, `Medium`, `High`, `XHigh`) y **`Orchestrator (Neon)`** se reinician **cada 24 horas**.
-3. **Optimización de Coste por Tarea:** Diseñado específicamente para flujos agénticos (*tool use*, terminal, edición multi-archivo y coordinación de `/swarm`).
+Con **Gemini 4 Carbon** habilitado en el plan Pro, dispones exactamente de la arquitectura original concebida por Google para Antigravity:
+
+1. **Modo `Orchestrator` Nativo (`Carbon` ↔ `Hydrogen` o `Neon` ↔ `Hydrogen`):**
+   - En lugar de usar un solo modelo rígido de principio a fin, **Orchestrator** alterna dinámicamente el control dentro de la misma conversación:
+     - **Carbon** (en `Orchestrator (Carbon)`) o **Neon** (en `Orchestrator (Neon)`) analiza dependencias, traza el plan y resuelve ambigüedades.
+     - **Hydrogen** toma el relevo automáticamente para editar archivos, implementar funciones y ejecutar la suite de tests a máxima velocidad.
+     - Si **Hydrogen** encuentra un test roto o una contradicción de diseño, devuelve el control inmediatamente a **Carbon / Neon** para reajustar la estrategia.
+2. **División de Trabajo en Enjambre (`/swarm`):**
+   - **Coordinador / Arquitecto:** `Gemini 4 Carbon (High/Medium)` o `Gemini 4 Neon (High)`.
+   - **Workers de Dominio y Contexto Amplio (1M tokens):** `gemini-4-neon-high` / `gemini-4-neon-medium`.
+   - **Workers de Ejecución Rápida / UI / Tests:** `gemini-4-hydrogen-high` / `gemini-4-hydrogen-xhigh`.
+   - **Verificadores Críticos:** `gemini-4-carbon-medium`, `gemini-4-neon-high` o `claude-sonnet-5-5-high`.
 
 ---
 
-## 3. Árbol de Decisión: ¿Qué Modo y Modelo Elegir?
+## 3. Árbol de Decisión Rápido en Antigravity
 
 ```mermaid
 flowchart TD
-    A["Nueva Tarea en Antigravity"] --> B{"¿Tipo de Flujo?"}
-    B -->|"Desarrollo completo en 1 sesión<br/>(Planificar + Codificar + Tests)"| C["⭐ Orchestrator (Neon)<br/>(Cuota Diaria · 1M Contexto)"]
-    B -->|"Arquitectura compleja o<br/>Contexto masivo (>100k tokens)"| D["🧠 Gemini 4 Neon (High / XHigh)<br/>(Cuota Diaria · 3x velocidad Carbon)"]
-    B -->|"Enjambre Paralelo (/swarm)<br/>3+ módulos simultáneos"| E["🐝 Coordinador: Neon (High)<br/>Workers: Neon (Medium/High) + Hydrogen (High)<br/>Verifier: Neon o Claude Sonnet 5.5"]
-    B -->|"Fan-out sobre 10+ archivos<br/>sin debate en tablero"| F["⚡ run_workflow (Python)<br/>con parallel() y pipeline()"]
-    B -->|"Segunda opinión crítica o<br/>cuota diaria de Neon agotada"| G["🛡️ Orchestrator (Argon) / Argon (High)<br/>(Reserva Semanal)"]
+    A["Tarea de Ingeniería en Antigravity"] --> B{"¿Complejidad y Paralelismo?"}
+    B -->|"Arquitectura crítica + Codificación guiada<br/>(1 sola conversación)"| C["🏆 Orchestrator (Carbon)<br/>Carbon planifica ↔ Hydrogen ejecuta"]
+    B -->|"Desarrollo ágil diario o Contexto Masivo 1M<br/>(1 sola conversación)"| D["⭐ Orchestrator (Neon) / Neon (High)<br/>3x más rápido · 1M Tokens In/Out"]
+    B -->|"Diseño puro, Seguridad, Algoritmos o<br/>Especificación EGM (Elephant)"| E["🧠 Gemini 4 Carbon (High)<br/>Razonamiento profundo puro"]
+    B -->|"Proyecto grande divisible en 3+ frentes<br/>simultáneos sin colisión"| F["🐝 /swarm-pro (Enjambre Mixto)<br/>Coord: Carbon/Neon · Workers: Neon + Hydrogen"]
+    B -->|"Procesamiento por lotes sobre N archivos<br/>sin debate en tablero"| G["⚡ run_workflow (Python)<br/>parallel() + pipeline()"]
 ```
 
 ---
 
-## 4. Protocolo `/swarm-pro` con Gemini 4 Neon + Hydrogen
+## 4. Protocolo `/swarm-pro` con la Tríada Carbon · Neon · Hydrogen
 
-### Paso 1: Verificar Cuotas y Nombrar el Enjambre
+### Paso 1: Inspección de Cuotas y Creación del Swarm
 ```json
 swarm{"action": "models"}
-swarm{"action": "title", "title": "Desarrollo Paralelo con Gemini 4 Neon"}
+swarm{"action": "title", "title": "Arquitectura Carbon + Ejecución Paralela Neon/Hydrogen"}
 ```
 
-### Paso 2: Estrategia de Asignación de Modelos por Rol en `/swarm`
-- **Coordinador Principal (tu sesión):** Selecciona **`Gemini 4 Neon (Medium o High)`** u **`Orchestrator (Neon)`** antes de iniciar el swarm. Así, todos los workers que hereden tu modelo usarán **cuota diaria** y ventana de **1M de tokens**.
-- **Workers de Lógica Compleja / Backend / Arquitectura (`workspace: "share"`):**
-  - Modelo: `gemini-4-neon-high` o `gemini-4-neon-medium` (o sin parámetro `model` si tu sesión ya está en Neon).
-- **Workers de Ejecución Rápida / UI / Tests Unitarios (`workspace: "share"`):**
-  - Modelo: `gemini-4-hydrogen-high` o `gemini-4-neon-medium`.
-- **Verificadores Independientes (`workspace: "inherit"`):**
-  - Añade **1 verificador por cada 2 a 4 autores** (`gemini-4-neon-high` o `claude-sonnet-5-5-high`). El verificador revisa diffs y corre tests, pero nunca edita los archivos del autor.
+### Paso 2: Asignación Óptima de Modelos por Worker (`swarm{action:"add"}`)
+> [!IMPORTANT]
+> Evita asignar modelos marcados como *Leaving Soon* (`gemini-4-argon-*`, `gemini-3.8-flash-*`). Utiliza siempre la generación vigente **Carbon / Neon / Hydrogen**:
+- **Worker de Núcleo / Arquitectura / Migración Compleja (`workspace: "share"`):**
+  - `model: "gemini-4-carbon-medium"` (razonamiento máximo) o `model: "gemini-4-neon-high"` (1M de tokens y alta velocidad).
+- **Worker de Implementación de Módulos / APIs (`workspace: "share"`):**
+  - `model: "gemini-4-neon-medium"` o `model: "gemini-4-neon-high"`.
+- **Worker de Frontend / UI / Tests / Scripts (`workspace: "share"`):**
+  - `model: "gemini-4-hydrogen-high"` o `model: "gemini-4-hydrogen-xhigh"`.
+- **Verifier Independiente (`workspace: "inherit"` — 1 por cada 2 a 4 autores):**
+  - `model: "gemini-4-carbon-high"` (para auditoría arquitectónica estricta) o `model: "claude-sonnet-5-5-high"` (contraste entre familias).
 
-### Paso 3: Reglas de Aislamiento y Ciclo del Tablero
-1. **Cero colisión de archivos:** Define en cada `brief` qué carpetas/archivos posee el worker y cuáles tiene prohibido tocar.
-2. **Turno de creación:** Añade los workers con `swarm{action:"add"}`, muestra el enlace `open_board` al usuario y **finaliza tu turno** para que se habiliten `post_message`, `read_board` y `swarm_wait`.
-3. **Coordinación eficiente:** Usa `swarm_wait{since: N}` y cita mensajes del tablero por número (`#3`, `#5`) sin duplicar texto.
-4. **Failover en caliente sin perder memoria:** Si un modelo agota su cuota diaria, cámbialo con:
-   ```json
-   swarm{"action": "model", "name": "worker", "model": "gemini-4-hydrogen-high"}
-   ```
-   (o pasa a `gemini-4-argon-medium` como reserva semanal). Nunca uses `kill` para pausar.
-5. **Integración antes de `kill`:** Fusiona los cambios de `workspace: "share"` o `"branch"` antes de eliminar cualquier worker autor.
+### Paso 3: Reglas Operativas del Coordinador
+1. **Cero colisión de archivos:** Un archivo o subdirectorio pertenece a un único worker autor.
+2. **Turno inicial:** Lanza todos los workers iniciales con `swarm{action:"add"}`, entrega el enlace `open_board` al usuario y **finaliza tu turno** para activar `post_message`, `read_board` y `swarm_wait`.
+3. **Referencias limpias:** Comunica hallazgos citando el número de mensaje del tablero (`#4`, `#6`) sin copiar bloques extensos.
+4. **Relevo dinámico de cuota (`model` switch):** Si `Carbon` alcanza un tope de cuota durante una sesión intensa, transfiere el worker en caliente a `gemini-4-neon-xhigh` o `gemini-4-hydrogen-xhigh` con `swarm{action:"model", name, model}` conservando toda su conversación.
+5. **Merge obligatorio antes de `kill`:** Integra los commits de `workspace: "share"` o `"branch"` en la rama principal antes de cerrar cualquier worker.
 
 ---
 
 ## 5. Referencias Detalladas
 
-- [references/model-tiers-and-quotas.md](references/model-tiers-and-quotas.md): Comparativa técnica de **Gemini 4 Neon vs. Argon vs. Hydrogen vs. Carbon** y matriz de cuotas verificadas.
-- [references/swarm-playbooks.md](references/swarm-playbooks.md): Playbooks de `/swarm` y `run_workflow` potenciados con **Gemini 4 Neon**.
+- [references/model-tiers-and-quotas.md](references/model-tiers-and-quotas.md): Matriz completa de **Carbon, Neon e Hydrogen**, transición de modelos *Leaving Soon* (`Argon` y `Flash 3.8`) y gestión de cuotas.
+- [references/swarm-playbooks.md](references/swarm-playbooks.md): Playbooks listos para ejecutar con **`Orchestrator (Carbon)`**, **`Orchestrator (Neon)`** y enjambres mixtos `/swarm`.

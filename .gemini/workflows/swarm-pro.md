@@ -1,13 +1,13 @@
 ---
 name: swarm-pro
-description: Despliega un enjambre coordinado (/swarm) o flujo paralelo optimizado con Gemini 4 Neon (1M tokens, cuota diaria) y Hydrogen usando la skill gemini4-orchestrator-swarm.
+description: Despliega un enjambre coordinado (/swarm) con la tríada Gemini 4 (Carbon para arquitectura/verificación, Neon para módulos 1M tokens e Hydrogen para ejecución rápida) usando gemini4-orchestrator-swarm.
 ---
 
 # Workflow: swarm-pro
 
-Sigue la skill `gemini4-orchestrator-swarm` (y la skill interna `swarm`) para estructurar y lanzar un equipo de agentes en paralelo aprovechando **Gemini 4 Neon** y **Hydrogen**:
+Sigue la skill `gemini4-orchestrator-swarm` (y la skill interna `swarm`) para estructurar y lanzar un equipo de agentes en paralelo aprovechando la tríada completa **Gemini 4 Carbon + Neon + Hydrogen**:
 
-1. **Verifica cuotas y modelos** con `swarm{action:"models"}` (priorizando `gemini-4-neon-*` y `gemini-4-hydrogen-*` con reinicio diario de 24h frente a la cuota semanal de Argon).
-2. **Divide la tarea sin colisiones de archivos:** define qué archivos posee cada worker autor (`workspace: "share"`) y añade al menos un `verifier` (`workspace: "inherit"`).
+1. **Verifica cuotas y modelos vigentes** con `swarm{action:"models"}` (evitando modelos *Leaving Soon* como `Argon` y `3.8 Flash`).
+2. **Divide la tarea sin colisiones de archivos:** asigna módulos críticos a `gemini-4-carbon-*` o `gemini-4-neon-high`, ejecución rápida/UI/tests a `gemini-4-hydrogen-high` (`workspace: "share"`), y al menos un `verifier` (`workspace: "inherit"`).
 3. **Nombra el swarm** con `swarm{action:"title"}` y lanza los workers con briefs autocontenidos.
 4. **Muestra el enlace `open_board`** al usuario al final del turno de creación y coordina mediante `swarm_wait` y `read_board`.
