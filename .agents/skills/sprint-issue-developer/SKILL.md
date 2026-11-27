@@ -68,6 +68,14 @@ graph TD
 
 ---
 
+## 📏 Reglas Locales del Repositorio (Precedencia y Control de PR)
+
+- Las convenciones del repositorio destino (`AGENTS.md`, `.agents/` propio) **PREVALECEN** sobre las reglas globales del entorno; el stack existente no se migra ni se reestructura sin un issue aprobado. Detalle: [references/05-precedencia-repo-equipo.md](references/05-precedencia-repo-equipo.md).
+- Los agentes **NUNCA** ejecutan `git push` hacia `main` ni hacen merge de Pull Requests; el merge a `main` lo realiza únicamente la persona reseñadora designada del proyecto (en la maestría: la profesora).
+- El Pull Request cita el issue con `Ref #N` (nunca `Closes`/`Fixes`), describe cómo cumple cada criterio de aceptación y adjunta evidencia de la suite de pruebas en verde. Detalle: [references/06-control-push-merge-github.md](references/06-control-push-merge-github.md).
+
+---
+
 ## 📋 Mini Checklist Operativo
 
 - [ ] ¿Se extrajeron los criterios de aceptación completos del Issue?
